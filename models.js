@@ -5,7 +5,7 @@ var User = mongoose.model('User', {
     name: String,
     email: { type: String, lowercase: true, requird: true },
     password: String,
-     date:{type:Date,default:new Date()},
+    date:{type:Date,default: Date()},
 });
 
 
@@ -23,7 +23,7 @@ var placeSchema = mongoose.Schema({
     city: {type:String,lowercase:true},
     state: {type:String,lowercase:true},
     country: {type:String,default:"india",lowercase:true},
-    date:{type:Date,default:new Date()},
+    date:{type:Date,default:Date()},
     images:Array
 
 });
@@ -34,7 +34,7 @@ var privatemessages=mongoose.model("privatemessages",{
     reciever:String,
     message:String,
     seen:{type:Boolean,default:false},
-    dateTime:{type:Date,default:new Date()},
+    dateTime:{type:Date,default:Date()},
 })
 
 

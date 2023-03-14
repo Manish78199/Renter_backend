@@ -17,7 +17,7 @@ const { authuser, tokenToId } = require("./Auth");
 const exp = require("express");
 const app = exp();
 const http = require('http');
-const { disconnect } = require("process");
+// const { disconnect } = require("process");
 const console = require("console")
 
 const server = http.createServer(app);
@@ -42,7 +42,7 @@ app.use(exp.json())
 
 async function conDb() {
     var uri = 'mongodb://localhost:27017/Renter';
-    var options = {
+    const options = {
         useNewUrlParser: true,
         useUnifiedTopology: true
     }
@@ -726,6 +726,7 @@ io.on('connection', (socket) => {
                 sendChatmessage.push({ recieve: mess.message, timestamp: mess.dateTime })
             }
         })
+        console.log(Allchatmessage)
         socket.emit("yourmessage", sendChatmessage)
     })
 
